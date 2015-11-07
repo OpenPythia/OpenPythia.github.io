@@ -1,0 +1,13 @@
+# Site settings
+title: OpenPythia
+email: your-email@domain.com
+description: OpenPythia allows a non-invasive look inside your Oracle database and find out what it is doing, looking at the used CPU, used IO and the statements performed.
+baseurl: "/"
+url: "http://openPythia.com"
+twitter_username: openPythia
+github_username:  openPythia
+
+oracleDriver: http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html
+
+# Build settings
+markdown: kramdown

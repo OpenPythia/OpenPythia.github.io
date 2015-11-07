@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenPythia</title>
+    <description>OpenPythia allows a non-invasive look inside your Oracle database and find out what it is doing, looking at the used CPU, used IO and the statements performed.</description>
+    <link>http://openPythia.com//</link>
+    <atom:link href="http://openPythia.com//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 07 Nov 2015 11:59:29 +0100</pubDate>
+    <lastBuildDate>Sat, 07 Nov 2015 11:59:29 +0100</lastBuildDate>
+    <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Welcome to OpenPythia!</title>
+        <description>&lt;p&gt;Three years after the initial commit we decided to make the software more visible in the developer and DBA community. We hope you enjoy the newly designed page. TODO: Add more text&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Mar 2015 13:02:59 +0100</pubDate>
+        <link>http://openPythia.com//2015/03/27/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://openPythia.com//2015/03/27/welcome-to-jekyll.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

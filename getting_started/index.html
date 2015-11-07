@@ -1,0 +1,151 @@
+---
+layout: default
+---
+
+<h1>Getting Started with OpenPythia</h1>
+
+<div class="explanation-row">
+    <p>OpenPythia is started by double clicking on the jar file. When starting it for the first time, it asks you to
+        provide
+        a JDBC driver. As Oracle has a restrictive policy for this driver, it could not be integrated into OpenPythia –
+        sorry. Click on the button Load JDBC driver and choose the appropriate driver.</p>
+
+    <p>You can download the driver from the <a
+            href="{{ site.oracleDriver | xml_escape }}">Oracle
+        Technology Network</a>.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_01_LoadJDBCDriver.png">
+    </figure>
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+    <p>On the next screen you have to provide the information into which schema OpenPythia should log in. As a first
+        time user you don’t have an appropriate schema – so you have to create one. Choose the menu item
+        <kbd>Tools <span
+                class="glyphicon glyphicon-menu-right small"></span> Create schema</kbd> creation script and save the
+        file. Hand this file to your database administrator – perhaps yourself when you try it on a developer database –
+        and let it be executed.</p>
+    <figure>
+        <img src="../images/GettingStarted_02_LoginEmpty.png">
+    </figure>
+
+    <p>For this Getting Started we have chosen a local XE database. In this case log in as SYS and execute the
+        script.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_02_LoginLocalXE.png">
+    </figure>
+
+    <p>Now provide the connection information. If you haven’t changed the script, the password of the user
+        <code>pythia</code> is <code>pythia</code>.
+        Press the button <kbd>Connect</kbd> to connect OpenPythia to the database.</p>
+
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+
+    <figure>
+        <img src="../images/GettingStarted_03_StartScreen.png">
+    </figure>
+
+    <p>After a few seconds you will see the first information on the database. Press the button <kbd>Details</kbd> to
+        get to the full blown version of the dialog.</p>
+    <p>Next you need to take a snapshot off the SQL statements in the library cache: Press the button <kbd>Take
+        Snapshot</kbd>.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_04_BigScreenEmpty.png">
+    </figure>
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+
+    <p>Now it is time to have a coffee: Give the database some minutes to do its work before you take the second
+        snapshot by pressing the button <kbd>Take Snapshot</kbd> a second time.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_05_BigScreenTwoSnapshots.png">
+    </figure>
+
+
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+    <p>Now that you have two snapshots, OpenPythia can compare these snapshots to tell you what happened on the database
+        in the meantime. Choose both snapshots and press the button <kbd>Compare Snapshots &hellip;</kbd></p>
+    <p>The lower part of the dialog is filled with the results of the comparison.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_06_BigScreenCompared.png">
+    </figure>
+
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+    <p>The lower part of the dialog gives you a first impression of what happened – but it isn’t very comfortable to
+        use. Press the button <kbd>Export to Excel</kbd> to get an Excel file containing all the information needed to
+        analyze the database.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_07_ExcelOverview.png">
+    </figure>
+
+    <p>The SQL statements are sorted by descending total elapsed time: During several years of doing fire fight projects
+        to improve database performance, most time the worst statements were those with the highest total elapsed
+        time.</p>
+
+    <p>When looking at this example you easily spot the problem: The first statement was executed more than 30thousand
+        times in five minutes.</p>
+
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+
+    <p>Even though to many calls are often found in real world scenarios, most times you would like to have a closer
+        look on the statements with a high total elapsed time. The first statement has a blue X in the column Plan (E).
+        If you click on it, you will see the execution plan of this statement. The execution plan is the one really used
+        – and maybe different from the one you get when executing explain plan. This is very important when you have to
+        find the root cause of performance problems in your productive system.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_08_ExcelExecutionPlan.png">
+    </figure>
+
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+    <p>Another way to look at a statement is via the wait events associated with it. Those statements have a blue X in
+        the column Wait (F). The following example is from a productive database.</p>
+
+    <figure>
+        <img src="../images/GettingStarted_09_ExcelWaitPerStatement.png">
+    </figure>
+
+</div>
+
+<hr class="explanation-divider">
+
+<div class="explanation-row">
+    <p>The currently last way to look at the performance is to have a look at all wait events. To see the list you have
+        to change to the sheet <kbd>All Wait Events</kbd>. Here you find an overview on all the wait events which occurred between
+        the two snapshots on which the report is based. </p>
+
+    <figure>
+        <img src="../images/GettingStarted_09_ExcelWaitPerStatement.png">
+    </figure>
+</div>
