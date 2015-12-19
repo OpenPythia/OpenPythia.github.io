@@ -35,6 +35,7 @@
 }
 
 .github-fork-ribbon a,
+.github-fork-ribbon a:visited,
 .github-fork-ribbon a:hover {
   /* Set the text properties */
   color: #fff;
